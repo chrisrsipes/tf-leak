@@ -20,6 +20,7 @@ public class DetectObjects {
           try {
             outputs = model.session().runner().run();
           } catch (Exception e) {
+          } finally {
             if (outputs != null) {
               for (Tensor<?> tensor : outputs) {
                 tensor.close();
